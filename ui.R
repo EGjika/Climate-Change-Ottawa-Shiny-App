@@ -67,7 +67,7 @@ dashboardPage(
             br(),
             plotOutput("plot_8"),
             strong("NOTE"),
-            p("This is the prediction from", span("SARIMA", style = "color:red"), "time series model for Numeric variable selected X.To obtain prediction for other variables just select the variable from the X variable tab"),
+            p("This is the prediction from", span("ETS", style = "color:red"), "time series model for Numeric variable selected X.To obtain prediction for other variables just select the variable from the X variable tab"),
           ),
          tabPanel(
             title = "Linear Model",
