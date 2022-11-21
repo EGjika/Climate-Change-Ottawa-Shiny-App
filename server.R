@@ -186,7 +186,7 @@ output$summary_stat <- renderTable(data.frame(print_sum_stat()))
 draw_plot_7 <- function(data_input, num_var_x){
   climate_s<-ts(data_input,start=2020,frequency=365)
   pred<-snaive(ts(data_input[,input$num_var_x],start=2020,frequency=365))# fit the prediction model
-  fig.7<-autoplot(forecast(pred),ylab="Numeric variable X") #plot prediction
+  fig.7<-autoplot(predict(pred),ylab="Numeric variable X") #plot prediction
   return(fig.7)
 }
 
@@ -198,8 +198,8 @@ output$plot_7 <- renderPlot(plot_7())
 
 draw_plot_8 <- function(data_input, num_var_x){
   climate_s<-ts(data_input,start=2020,frequency=365)
-  pred<-auto.arima(ts(data_input[,input$num_var_x],start=2020,frequency=365))# fit the prediction model
-  fig.8<-autoplot(forecast(pred),ylab="Numeric variable X") #plot prediction
+  pred<-ets(ts(data_input[,input$num_var_x],start=2020,frequency=365))# fit the prediction model
+  fig.8<-autoplot(predict(pred),ylab="Numeric variable X") #plot prediction
   return(fig.8)
 }
 
